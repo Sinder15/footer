@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Media Partners Banner</title>
+  <title>Seamless Media Banner</title>
   <style>
     body {
       margin: 0;
@@ -19,37 +19,38 @@
       background-color: #ffffff;
     }
     .scroll-content {
-      display: inline-block;
-      animation: scroll-left 25s linear infinite;
+      display: inline-flex;
+      animation: scroll-left 30s linear infinite;
       height: 100%;
     }
     .logo-item {
-      display: inline-block;
       height: 80px;
       margin: 10px 20px;
-      vertical-align: middle;
+      flex-shrink: 0; /* 防止压缩 */
     }
     .logo-img {
       height: 100%;
       object-fit: contain;
     }
+
+    /* 关键：只滚动一个完整周期（-50%） */
     @keyframes scroll-left {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
   </style>
 </head>
 <body>
   <div class="scroll-container">
     <div class="scroll-content">
-      <!-- 第一轮 -->
+      <!-- 第一组 LOGO -->
       <div class="logo-item"><img src="China Youth Daily.png" alt="China Youth Daily" class="logo-img"></div>
       <div class="logo-item"><img src="People's Daily.png" alt="People's Daily" class="logo-img"></div>
       <div class="logo-item"><img src="Public Welfare Times.png" alt="Public Welfare Times" class="logo-img"></div>
       <div class="logo-item"><img src="Sohu Charity.png" alt="Sohu Charity" class="logo-img"></div>
       <div class="logo-item"><img src="Tencent Charity.png" alt="Tencent Charity" class="logo-img"></div>
 
-      <!-- 第二轮（实现无缝循环） -->
+      <!-- 第二组（完全相同的副本） -->
       <div class="logo-item"><img src="China Youth Daily.png" alt="China Youth Daily" class="logo-img"></div>
       <div class="logo-item"><img src="People's Daily.png" alt="People's Daily" class="logo-img"></div>
       <div class="logo-item"><img src="Public Welfare Times.png" alt="Public Welfare Times" class="logo-img"></div>
