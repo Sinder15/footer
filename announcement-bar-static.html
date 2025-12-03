@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Announcement Bar - Static Text, Seamless Scroll</title>
+  <style>
+    /* Reset */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    /* Announcement bar container */
+    .announcement-bar {
+      height: 60px;
+      overflow: hidden;
+      border: 1px solid #c91f37;
+      background: #fff8f8;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    /* Marquee animation */
+    .marquee {
+      display: flex;
+      animation: scroll-left 60s linear infinite; /* Fixed slow speed */
+      width: fit-content;
+    }
+
+    /* Each announcement item */
+    .item {
+      white-space: nowrap;
+      padding: 15px 20px;
+      border-right: 1px dashed #ccc;
+      color: #000;
+      text-decoration: none;
+    }
+
+    /* Seamless scroll keyframes */
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <div class="marquee">
+
+      <!-- First copy -->
+      <span class="item"><strong>2025-11-16</strong> Beware of new types of fake order scams; 'donation rebates' and 'order cashback' schemes should never be trusted.</span>
+      <span class="item"><strong>2025-11-10</strong> Announcement by the China Charity Federation on the Launch of the Aid Project for Hemophilia A Patients Sustained by Love</span>
+      <span class="item"><strong>2025-11-05</strong> Announcement on the Application and Additional Enrollment Related Matters for the China Charity Federation’s Assistance Project for Hemophilia A Patients (Financial Aid)</span>
+      <span class="item"><strong>2025-10-28</strong> China Charity Federation 'Creating the Future Together' - Tumor Research and Development Project Announcement</span>
+
+      <!-- Second copy (for seamless loop) -->
+      <span class="item"><strong>2025-11-16</strong> Beware of new types of fake order scams; 'donation rebates' and 'order cashback' schemes should never be trusted.</span>
+      <span class="item"><strong>2025-11-10</strong> Announcement by the China Charity Federation on the Launch of the Aid Project for Hemophilia A Patients Sustained by Love</span>
+      <span class="item"><strong>2025-11-05</strong> Announcement on the Application and Additional Enrollment Related Matters for the China Charity Federation’s Assistance Project for Hemophilia A Patients (Financial Aid)</span>
+      <span class="item"><strong>2025-10-28</strong> China Charity Federation 'Creating the Future Together' - Tumor Research and Development Project Announcement</span>
+
+    </div>
+  </div>
+
+</body>
+</html>
